@@ -1,0 +1,267 @@
+/* Tablet layouts get roomier content by moving navigation into the drawer. */
+@media (max-width: 900px) {
+  .stats-grid,
+  .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 850px) {
+  .sidebar {
+    width: 270px;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: 8px 0 30px #1c1b3012;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close,
+  .mobile-menu {
+    display: grid;
+  }
+
+  .sidebar-backdrop.show {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 19;
+    background: #17162d55;
+  }
+
+  .main-area {
+    margin-left: 0;
+  }
+
+  .topbar {
+    height: 58px;
+    padding: 0 16px;
+  }
+
+  .mobile-menu {
+    margin-left: -7px;
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .topbar-actions {
+    gap: 9px;
+  }
+
+  .topbar-actions > .avatar {
+    display: none;
+  }
+
+  .student-select select {
+    width: 82px;
+  }
+
+  .role-toggle button {
+    padding: 6px 8px;
+  }
+
+  .page-content {
+    padding: 27px 18px 15px;
+  }
+
+  .welcome-row:not(.admin-welcome) {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .welcome-row h1 {
+    font-size: 23px;
+  }
+
+  .welcome-row p {
+    max-width: 340px;
+    line-height: 1.5;
+  }
+
+  .date-pill {
+    margin-top: 0;
+    padding: 7px;
+  }
+
+  .date-pill strong {
+    font-size: 9px;
+    white-space: nowrap;
+  }
+
+  .date-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .assignment-section {
+    padding: 18px 16px;
+  }
+}
+
+/* Stack the professor action below the title when the tablet is narrow. */
+@media (max-width: 600px) {
+  .admin-welcome {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .admin-welcome .create-button {
+    align-self: flex-start;
+    margin-top: 0;
+  }
+}
+
+/* Keep the phone header usable without sacrificing the role and account pickers. */
+@media (max-width: 480px) {
+  .topbar {
+    padding: 0 10px;
+  }
+
+  .topbar-left {
+    gap: 2px;
+  }
+
+  .crumb {
+    gap: 5px;
+    font-size: 9px;
+  }
+
+  .crumb > span:first-child,
+  .crumb-slash {
+    display: none;
+  }
+
+  .crumb strong {
+    display: block;
+    max-width: 64px;
+    font-size: 9px;
+    line-height: 1.1;
+    white-space: normal;
+  }
+
+  .topbar-actions {
+    gap: 4px;
+  }
+
+  .role-toggle button {
+    padding: 5px 6px;
+    font-size: 8px;
+  }
+
+  .student-select {
+    position: relative;
+    display: grid;
+    width: 27px;
+    height: 29px;
+    place-items: center;
+    margin-left: 1px;
+  }
+
+  .student-select .avatar {
+    display: inline-grid;
+  }
+
+  .student-select select {
+    position: absolute;
+    inset: 0;
+    width: 27px;
+    height: 29px;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .student-select > svg {
+    display: none;
+  }
+
+  .topbar-actions > .icon-button {
+    width: 26px;
+  }
+
+  .topbar-divider {
+    height: 18px;
+  }
+
+  .page-content {
+    padding: 22px 12px 12px;
+  }
+
+  .stats-grid {
+    gap: 8px;
+  }
+
+  .assignment-section {
+    padding: 16px 12px;
+  }
+
+  .page-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .topbar {
+    padding: 0 8px;
+  }
+
+  .topbar-actions {
+    gap: 3px;
+  }
+
+  .role-toggle button {
+    padding: 5px;
+    font-size: 7px;
+  }
+
+  .crumb strong {
+    max-width: 55px;
+    font-size: 8px;
+  }
+
+  .page-content {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .assignment-section {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .student-row-name {
+    width: 78px;
+  }
+
+  .student-row-name small {
+    display: none;
+  }
+
+  .student-progress-row {
+    gap: 5px;
+  }
+
+  .student-status {
+    gap: 3px;
+    font-size: 7px;
+  }
+
+  .student-status svg {
+    width: 11px;
+  }
+
+  .student-progress-bar {
+    min-width: 18px;
+  }
+}
