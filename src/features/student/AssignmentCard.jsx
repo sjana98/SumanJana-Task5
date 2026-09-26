@@ -1,4 +1,5 @@
 import { ArrowRight, Check, ExternalLink, FileText } from 'lucide-react'
+import EditedTag from '../../components/common/EditedTag'
 import { daysUntil, formatDate, getCourseColor } from '../../utils/assignment'
 
 export default function AssignmentCard({ assignment, onConfirm }) {
@@ -23,6 +24,7 @@ export default function AssignmentCard({ assignment, onConfirm }) {
         <div className="assignment-foot">
           <span className={`status-pill ${statusClass}`}><span />{statusLabel}</span>
           <span className="due-label">Due {formatDate(assignment.due)}</span>
+          <EditedTag date={assignment.editedAt} />
         </div>
       </div>
       <div className="assignment-action">

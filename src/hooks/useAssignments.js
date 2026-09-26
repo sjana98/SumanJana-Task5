@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { initialAssignments, readStored } from '../data'
+import { getTodayISODate } from '../utils/assignment'
 
 const storageKey = 'joineazy.assignments'
 
@@ -26,7 +27,9 @@ export default function useAssignments() {
 
       return alreadyExists
         ? currentAssignments.map((assignment) => (
-          assignment.id === updatedAssignment.id ? updatedAssignment : assignment
+          assignment.id === updatedAssignment.id
+            ? { ...updatedAssignment, editedAt: getTodayISODate() }
+            : assignment
         ))
         : [updatedAssignment, ...currentAssignments]
     })

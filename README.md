@@ -24,6 +24,7 @@ npm run preview
 - The student selector changes the demo identity. Each student sees only their own submission state; the professor view shows all students for assignments in the workspace.
 - Select **Mark as submitted** and complete both confirmation steps to update that student's status.
 - In Professor view, create, edit, or delete an assignment. Each assignment can include a Google Drive link for external submission.
+- Editing an assignment records the local edit date and shows an “Edited” tag in both student and professor views.
 - Assignment updates persist in the current browser using `localStorage`. Use the browser's site data controls to restore the original demo seed.
 
 ## Structure

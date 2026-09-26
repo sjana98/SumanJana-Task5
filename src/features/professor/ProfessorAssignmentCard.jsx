@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Check, ChevronDown, Clock3, ExternalLink, FileText, Link2, Pencil, Trash2 } from 'lucide-react'
 import { students } from '../../data'
 import Avatar from '../../components/common/Avatar'
+import EditedTag from '../../components/common/EditedTag'
 import ProgressBar from '../../components/common/ProgressBar'
 import { formatDate, getCourseColor, getPercent } from '../../utils/assignment'
 
@@ -21,7 +22,7 @@ export default function ProfessorAssignmentCard({ assignment, onEdit, onDelete }
       <div className="admin-card-top">
         <div className={`mini-art art-${courseColor}`}><FileText size={18} /></div>
         <div className="admin-title">
-          <span className="assignment-meta">{assignment.course} <span className="meta-dot">·</span> Due {formatDate(assignment.due)}</span>
+          <span className="assignment-meta">{assignment.course} <span className="meta-dot">·</span> Due {formatDate(assignment.due)} <EditedTag date={assignment.editedAt} /></span>
           <h3>{assignment.title}</h3>
           <div className="admin-card-progress">
             <ProgressBar value={progress} />
